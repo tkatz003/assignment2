@@ -1,0 +1,75 @@
+CEN4020 Assignment #3
+Name: Tara Katz
+FSUID: tk21b
+
+Git Lab Tutorials Completed: October 15, 2026
+GitHub Account Created: March 2026
+
+Question 1: Console output after pushing changes
+
+[master 94779ca] Add Git status documentation
+ 1 file changed, 9 insertions(+)
+ create mode 100644 docs/status.txt
+(base) tarakatz@Taras-MacBook-Air assignment2 % git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 775 bytes | 775.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/tkatz003/assignment2.git
+   f4975e5..94779ca  master -> master
+
+Question 2: How many commits have been done to the repository?
+
+There have been 9 commits in the repository so far, including the original commits and my own commits.
+
+Command used:
+git rev-list --count HEAD
+
+Question 3: When was README.md last modified?
+
+README.md was last modified on October 16, 2026, at 19:35 KST
+
+Command used:
+git log -1 --format="%h %ad %s" --date=iso-local -- README.md
+
+Question 4: Mention two reasons why branches are used in a Git repository.
+
+Branches allow developers to work on new features or fix bugs without having to change the main version of the project. They also allow multiple developers to work on different parts of a project at the same time and merge their changes when they need to.
+
+Question 5: What is the difference between git log and git status?
+
+The difference is that git log displays the commit history of a repository, including previous commits, messages, authors, and dates. git status shows the current state of the working directory and staging area, including modified, staged, and untracked files.
+
+Question 6: What command would you use to see commits where Vehicle.h was one of the committed files?
+
+Command used:
+git log --oneline --all -- Vehicle.h
+
+This command shows the commits that changed Vehicle.h. My repository returned four commits.
+
+Question 7: What command would you use to see commits whose commit message contains the word "file"?
+
+Command used:
+git log --all --oneline --grep="file" -i
+
+This command searches commit messages for the word "file", ignoring capitalization. My repository returned two matching commits.
+
+Question 8: Explain inheritance, polymorphism, and encapsulation.
+
+- Inheritance: Inheritance allows one class to inherit properties and methods from another class. This helps reuse code and create relationships between classes.
+
+- Polymorphism: Polymorphism allows objects of different classes to be treated through a common interface while behaving differently. For example, different vehicle classes can implement the same method in their own ways.
+
+- Encapsulation: Encapsulation means keeping data and the methods that operate on it together inside a class while controlling access to internal data. This helps protect information and makes code easier to maintain.
+
+Question 9: What is the main difference between the Dictator and Lieutenants workflow and the Integration Manager workflow?
+
+The main difference is how changes are reviewed and integrated. In the Integration Manager workflow, developers push changes to their own public repositories, and one integration manager merges those changes into the central repository and resolves conflicts. In the Dictator and Lieutenants workflow, developers send their changes to assigned lieutenants, who merge changes and resolve conflicts before passing them to the dictator. The dictator then integrates the changes into the main repository. This allows the work of integrating changes to be distributed among multiple people instead of relying on one integration manager.
+
+Question 10: How would a team of 100 developers benefit from following the Dictator and Lieutenants workflow instead of the Centralized workflow?
+
+A team of 100 developers would benefit because the Dictator and Lieutenants workflow divides the responsibility of reviewing and merging code among several lieutenants. In a Centralized workflow, developers share one repository and must pull changes and resolve conflicts before pushing their work. With 100 developers, this could lead to frequent conflicts and coordination problems. By assigning groups of developers to different lieutenants, conflicts can be resolved within smaller groups before the changes reach the dictator. This makes collaboration more organized and helps the team manage a large number of contributions more efficiently.
+
